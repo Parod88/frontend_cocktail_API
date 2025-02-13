@@ -4,9 +4,11 @@ import { Cocktail, ICocktail } from "@/models/Cocktail";
 const cocktailsUrl = `${import.meta.env.VITE_APP_BASE_URL}`;
 
 interface IApiCocktail {
+  idDrink: string;
   strDrink: string;
   strDrinkThumb: string;
   strInstructions?: string;
+  strInstructionsES?: string;
 }
 
 interface IApiResponse {
@@ -29,9 +31,12 @@ export default class CocktailService {
       return res.drinks?.map(
         (drink) =>
           new Cocktail({
+            id: drink.idDrink,
             drink: drink.strDrink,
             image: drink.strDrinkThumb,
-            instructions: drink.strInstructions ?? "Noinstructions available",
+            instructions: drink.strInstructions ?? "No instructions available",
+            instructionsES:
+              drink.strInstructionsES ?? "No hay instrucciones disponibles",
           })
       );
     } catch (error) {
