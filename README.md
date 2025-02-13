@@ -35,3 +35,5 @@ Para lograr cierta permanencia he hecho un contexto donde almacenar los cocktail
 Podría haber hecho uso del local storage para poder conserva la lista de favoritos al refrescar o reiniciar la app pero me parecía más interesante poder mostrar conocimientos de React como el useContext().
 
 Finalmente y porque me ha llevado más de 2 horas no he querido hacer el modal, el cual hubiera hecho extendiendo el modelo. Haciendo el componente en si mismo y gestionando su renderización con un useState<boolean> desde un botón en el componente CocktailCard como dice el enunciado.
+
+Debido al exceso de tiempo tampoco he hecho los tests, los cuales hubiera hecho con Jest.

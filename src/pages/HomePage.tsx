@@ -34,19 +34,19 @@ const HomePage = () => {
     cocktail.drink.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
   );
 
-  const sortedCocktails = showFavoritesFirst
-    ? [
-        ...filteredCocktails.filter((cocktail) =>
-          favorites.some((favCocktail) => favCocktail.id === cocktail.id)
-        ),
-        ...filteredCocktails.filter(
-          (cocktail) =>
-            !favorites.some((favCocktail) => favCocktail.id === cocktail.id)
-        ),
-      ]
-    : filteredCocktails.length
-      ? filteredCocktails
-      : favorites;
+  const sortedCocktails = filteredCocktails.length
+    ? showFavoritesFirst
+      ? [
+          ...filteredCocktails.filter((cocktail) =>
+            favorites.some((favCocktail) => favCocktail.id === cocktail.id)
+          ),
+          ...filteredCocktails.filter(
+            (cocktail) =>
+              !favorites.some((favCocktail) => favCocktail.id === cocktail.id)
+          ),
+        ]
+      : filteredCocktails
+    : favorites;
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
