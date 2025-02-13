@@ -16,6 +16,8 @@ Para iniciar el proyecto he usado una plantilla de la comunidad de Vite que lo i
 
 He creado una estructura de carpetas que permiten cierta escalabilidad en el código y he seguido los principios SOLID.
 
+El archivo .env no lo he metido en el .gitignore para que lo podías echar a andar sin tener que meter las variables.
+
 **Requisitos funcionales**
 
 He creado un modelo ICocktail para operar con los datos del cocktail que necesitamos.
